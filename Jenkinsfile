@@ -1,8 +1,6 @@
 pipeline {
     agent any 
-    tools {
-       maven 'mvn'
-   }
+   
  triggers {
      pollSCM('* * * * *') // Schedule SCM polling at a specified interval (every minute in this example)
  }
@@ -15,21 +13,18 @@ pipeline {
 
       stage('Build') {
             steps {
-                 sh 'mvn clean install'
                  echo 'building the application'
             }
         }
 
         stage('Test') {
             steps {
-                sh 'mvn test'
                 echo 'testing the application'
             }
         }
 
         stage('Deploy') {
             steps {
-                sh 'mvn deploy'
                  echo 'deploying the application'
             }
         }
