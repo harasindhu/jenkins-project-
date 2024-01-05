@@ -1,5 +1,8 @@
 pipeline {
     agent any 
+ tools {
+     maven 'mvn'
+ }
    
  triggers {
      pollSCM('* * * * *') // Schedule SCM polling at a specified interval (every minute in this example)
