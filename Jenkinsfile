@@ -6,14 +6,14 @@ pipeline {
  triggers {
      pollSCM('* * * * *') // Schedule SCM polling at a specified interval (every minute in this example)
  }
-stage('Checkout') {
+     stages {
+      stage('Checkout') {
      steps {
           git branch: 'main', url: 'https://github.com/iamkishore0/maven_project.git'
  }
  }
 
-    stages {
-        stage('Build') {
+      stage('Build') {
             steps {
                  sh 'mvn clean install'
                  echo 'building the application'
