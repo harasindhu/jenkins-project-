@@ -8,8 +8,8 @@ pipeline {
       stage('Checkout') {
      steps {
           git branch: 'main', url: 'https://github.com/iamkishore0/maven_project.git'
- }
- }
+         }
+     }
 
       stage('Build') {
             steps {
